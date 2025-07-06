@@ -3,6 +3,7 @@
 
 void setBackgroundColor();
 void display();
+void reshape();
 
 int main(int argc, char** argv){
   
@@ -20,8 +21,8 @@ int main(int argc, char** argv){
   // Display function => parameter is a pointer to a function
 
   glutDisplayFunc(display);
-  
-  setBackgroundColor();
+  glutReshapeFunc(reshape);
+  // setBackgroundColor();
 
   // Run the program until the user terminates it
   glutMainLoop();
@@ -38,7 +39,7 @@ void display(){
   
   // write code to draw
 
-  
+
 
   //  Displays the frame buffer on screen
   glFlush();
@@ -47,5 +48,26 @@ void display(){
 
 void setBackgroundColor(){
   // set color in rgb in range 0-1
-  glClearColor(1.0, 0.4, 0.9, 1.0);
+  glClearColor(0, 0, 0, 1.0);
+}
+
+void reshape(int width, int height){
+
+  // viewport => area inside window where stuff is displayed
+
+  // set viewport
+  glViewport(0, 0 ,width, height);
+
+  // Projection 
+
+  // manipulate the projection matrix
+  glMatrixMode(GL_PROJECTION);
+
+  glLoadIdentity();
+
+  // 2D projection
+
+  
+
+
 }
