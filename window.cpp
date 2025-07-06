@@ -3,7 +3,7 @@
 
 void setBackgroundColor();
 void display();
-void reshape();
+void reshape(int width, int height);
 
 int main(int argc, char** argv){
   
@@ -39,7 +39,30 @@ void display(){
   
   // write code to draw
 
+  // set point size 
 
+  glPointSize(10);
+
+  // tells gl we are going to specify points 
+  // glBegin(GL_POINTS);
+
+  // two points on screen
+  // glVertex2f(5,5);
+  // glVertex2f(-5,-5);
+
+
+
+  // to work with triangles
+
+  // glBegin(GL_TRIANGLES);
+
+  // glVertex2f(0.0, 5.0);
+  // glVertex2f(4.0, -3.0);
+  // glVertex3f(-4.0, -3.0, 0);
+
+
+
+  glEnd();
 
   //  Displays the frame buffer on screen
   glFlush();
@@ -67,7 +90,9 @@ void reshape(int width, int height){
 
   // 2D projection
 
-  
+  gluOrtho2D(-10,10,-10,10);
+
+  glMatrixMode(GL_MODELVIEW);
 
 
 }
